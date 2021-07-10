@@ -21,6 +21,15 @@ function fizzBuzz(entrada){
     return entrada;
 }
 
-let resultado = fizzBuzz(7);
-console.log(resultado);
 
+function reverseAString(str){
+    let newStr ='';
+    //tried to use two pointers but in javascript string are immutable :/
+    for(let i = str.length - 1 ; i>=0 ; i--)
+    {
+        newStr += str[i];
+    }
+    
+     console.log(newStr);
+}
+let resultado = reverseAString("Hello");

@@ -32,4 +32,11 @@ function reverseAString(str){
     
      console.log(newStr);
 }
-let resultado = reverseAString("Hello");
+
+
+function celciusToFahrenheit(temperature){
+    return (temperature*(9/5) + 32);
+}
+
+let result = celciusToFahrenheit(30);
+console.log(result);

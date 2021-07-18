@@ -3,16 +3,18 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 
-function App() {
-  const [usuario, setUsuario] = useState('');
+function App(props) {
+  const [ usuario, setUsuario] = useState('');
   
   function handlePesquisa(){
-    axios.get('https://api.github.com/users/jailjr/repos').then( response => console.log(response));
+    axios.get(`https://api.github.com/users/${usuario}/repos`).then( response => console.log(response.data));
   }
 
   return (
    <>
-   <input className="usuarioinput" placeholder="Usuário" value = {usuario} onchange={e=> setUsuario()}></input>
+
+
+   <input type="text" className="usuarioInput" placeholder="Usuário" value ={usuario} onChange={e=> setUsuario(e.target.value)}/>
    <button type="button" onClick={handlePesquisa}>Pesquisar</button>
    </>
   );
